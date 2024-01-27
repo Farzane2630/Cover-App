@@ -1,5 +1,8 @@
-import { useEffect, useState } from "react";
-import { Context } from "./Hooks/useContext";
+import React, { useState } from 'react';
+import { Context } from './Hooks/useContext';
+import AllRoutes from './Routes';
+import { useDeviceDimensionsContext } from './Hooks/useDeviceDimensionsContext';
+
 interface Dimensions {
   width: number;
   height: number;
@@ -11,46 +14,20 @@ function App() {
     height: window.innerHeight,
   });
 
-  const checkDimensions = () => {
-    const currentDimensions: Dimensions = {
-      width: window.innerWidth,
-      height: window.innerHeight,
-    };
-    if (
-      currentDimensions.width !== dimensions.width ||
-      currentDimensions.height !== dimensions.height
-    ) {
-      console.error('Error: Device dimensions have changed.');
-    }
-  };
-
-  useEffect(() => {
-    checkDimensions();
-  }, [dimensions]);
-
-  useEffect(() => {
-    const handleResize = () => {
-      checkDimensions();
-      setDimensions({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const isDimensionsChanged = useDeviceDimensionsContext();
 
   return (
-    <Context.Provider value={{
-      dimensions: dimensions,
-      checkDimensions: checkDimensions
-    }}>
+    <Context.Provider
+      value={{
+        dimensions: dimensions,
+        setDimensions: setDimensions,
+      }}
+    >
+      <div className={`w-[${dimensions.width}px] h-[${dimensions.height}px]  bg-red`}>
+        {!isDimensionsChanged ? <AllRoutes /> : <h1>Your device has been changed!</h1>}
+      </div>
     </Context.Provider>
   );
 }
 
-export default App
+export default App;

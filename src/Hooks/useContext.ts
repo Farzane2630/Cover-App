@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext } from 'react';
 
 interface Dimensions {
   width: number;
@@ -7,13 +7,13 @@ interface Dimensions {
 
 interface DeviceDimensionsContextProps {
   dimensions: Dimensions;
-  checkDimensions: () => void;
+  setDimensions: React.Dispatch<React.SetStateAction<Dimensions>>;
 }
 
 export const Context = createContext<DeviceDimensionsContextProps>({
   dimensions: {
-    width: 0,
-    height: 0,
+    width: window.innerWidth,
+    height: window.innerHeight,
   },
-  checkDimensions: () => {},
+  setDimensions: () => {},
 });
