@@ -1,3 +1,20 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@font-face {
+   font-family: "Yekan-Bach";
+   src: url("/src/assets/fonts/YekanBakh-Regular.ttf") format("truetype");
+ }
+ 
+ body {
+   direction: rtl;
+   font-style: normal;
+   font-weight: 400;
+   display: flex !important;
+   font-family: "Yekan-Bach" !important;
+ }
+
+ #next-btn {
+ max-width: calc(100% - 24px) !important;
+ }
