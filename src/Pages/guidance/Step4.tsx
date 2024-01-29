@@ -6,7 +6,7 @@ import NextBtn from '../../Components/Shared/guidance/NextBtn'
 
 export default function MicTest() {
    return (
-      <GuidanceLayout step1={false} prevRoute="/guidance/step-2" nextBtn={<NextBtn nextRoute="/step-4" />} >
+      <GuidanceLayout prevRoute="/guidance/step-2" nextBtn={<NextBtn nextRoute="/step-4" />} >
          <Guidance
             testHeader={
                <TestIcon testTitle="میکروفن" icon={<Microphone />} />

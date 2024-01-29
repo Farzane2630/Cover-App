@@ -6,7 +6,7 @@ import Touch from "../../Utils/Icons/Touch";
 
 export default function TouchTest() {
   return (
-    <GuidanceLayout step1={true} prevRoute="/" nextBtn={<StartBtn />} >
+    <GuidanceLayout prevRoute="/" nextBtn={<StartBtn />} >
       <Guidance testHeader={
         <TestIcon testTitle="صفحه لمسی" icon={<Touch />} />
       }

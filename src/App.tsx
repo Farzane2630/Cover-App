@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Context } from './Hooks/useContext';
+// @ts-ignore
 import AllRoutes from './Routes';
 import { useDeviceDimensionsContext } from './Hooks/useDeviceDimensionsContext';
 import { NextUIProvider } from '@nextui-org/react';
