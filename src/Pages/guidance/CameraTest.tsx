@@ -6,7 +6,7 @@ import NextBtn from '../../Components/Shared/guidance/NextBtn'
 
 export default function CameraTest() {
    return (
-      <GuidanceLayout prevRoute="/guidance/step-1" nextBtn={<NextBtn nextRoute="/step-3" />} >
+      <GuidanceLayout step1={false} prevRoute="/guidance/step-1" nextBtn={<NextBtn nextRoute="/step-3" />} >
          <Guidance
             testHeader={
                <TestIcon testTitle="دوربین" icon={<Camera />} />

@@ -18,18 +18,18 @@ function App() {
   const isDimensionsChanged = useDeviceDimensionsContext();
 
   return (
-    <NextUIProvider>
+    <NextUIProvider style={{width: "100%", height:"100%"}}>
     <Context.Provider
       value={{
         dimensions: dimensions,
         setDimensions: setDimensions,
       }}
       >
-      <div className={`w-[${dimensions.width}px] h-[${dimensions.height}px]  bg-red`}>
+      <div className={`w-full h-full`}>
         {!isDimensionsChanged ? <AllRoutes /> : <h1>Your device has been changed!</h1>}
       </div>
     </Context.Provider>
-      </NextUIProvider>
+     </NextUIProvider>
   );
 }
 

@@ -6,7 +6,7 @@ import NextBtn from '../../Components/Shared/guidance/NextBtn'
 
 export default function SpeakerTest() {
    return (
-      <GuidanceLayout prevRoute="/guidance/step-1" nextBtn={<NextBtn nextRoute="/step-2" />} >
+      <GuidanceLayout step1={false} prevRoute="/guidance/step-1" nextBtn={<NextBtn nextRoute="/step-2" />} >
          <Guidance
          testHeader={
             <TestIcon testTitle="صدا" icon={<Speaker />} />

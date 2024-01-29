@@ -13,7 +13,9 @@
    font-weight: 400;
    display: flex !important;
    font-family: "Yekan-Bach" !important;
+   min-height: 100vh;
  }
+
 
  #next-btn {
  max-width: calc(100% - 24px) !important;

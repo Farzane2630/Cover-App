@@ -1,3 +1,4 @@
+import StartBtn from "../../Components/Modules/Guidance/TouchTest/StartBtn";
 import Guidance from "../../Components/Shared/guidance/Guidance";
 import TestIcon from "../../Components/Shared/guidance/TestIcon";
 import GuidanceLayout from "../../Layout/Guidance/GuidanceLayout";
@@ -5,7 +6,7 @@ import Touch from "../../Utils/Icons/Touch";
 
 export default function TouchTest() {
   return (
-    <GuidanceLayout prevRoute="/" nextBtn={<></>} >
+    <GuidanceLayout step1={true} prevRoute="/" nextBtn={<StartBtn />} >
       <Guidance testHeader={
         <TestIcon testTitle="صفحه لمسی" icon={<Touch />} />
       }
