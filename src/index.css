@@ -3,20 +3,43 @@
 @import 'tailwindcss/utilities';
 
 @font-face {
-   font-family: "Yekan-Bach";
-   src: url("/src/assets/fonts/YekanBakh-Regular.ttf") format("truetype");
- }
- 
- body {
-   direction:rtl;
-   font-style: normal;
-   font-weight: 400;
-   display: flex !important;
-   font-family: "Yekan-Bach" !important;
-   min-height: 100vh;
- }
+  font-family: "Yekan-Bach";
+  src: url("/src/assets/fonts/YekanBakh-Regular.ttf") format("truetype");
+}
+
+body {
+  direction: rtl;
+  font-style: normal;
+  font-weight: 400;
+  display: flex !important;
+  font-family: "Yekan-Bach" !important;
+  min-height: 100vh;
+}
 
 
- #next-btn {
- max-width: calc(100% - 24px) !important;
- }
+#next-btn {
+  max-width: calc(100% - 24px) !important;
+}
+
+
+.touch-test-container {
+  max-width: 100vw !important;
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.rectangle {
+  border: none;
+  border-radius: 8px;
+  margin: 4px;
+  background-color: rgb(232, 232, 248);
+}
+
+.touched {
+  background-color: #00f;
+}
