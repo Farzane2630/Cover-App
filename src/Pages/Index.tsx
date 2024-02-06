@@ -1,7 +1,12 @@
 function Index() {
+  // @ts-ignore
   return (
-    <div>Index</div>
+    <h1>
+      INDEX
+    </h1>
   )
+
+
 }
 
 export default Index

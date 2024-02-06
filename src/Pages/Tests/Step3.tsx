@@ -1,7 +1,10 @@
-import React from 'react'
+import Camera from "../../Components/Modules/Tests/Camera";
 
 export default function Step3() {
-  return (
-    <div>Step3</div>
-  )
+  // first rear-camera 
+  // then frontcamera
+  
+  // @ts-ignore
+return < Camera chooseCamera="user" />
+
 }

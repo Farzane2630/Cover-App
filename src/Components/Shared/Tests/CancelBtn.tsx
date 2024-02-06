@@ -1,10 +1,13 @@
-import React from 'react'
+import { Link } from "react-router-dom"
+import { IoIosClose } from "react-icons/io";
 
-function CancelBtn() {
+function CancelBtn(link: string) {
   return (
-    <div className='flex flex-row justify-center items-center rounded-xl bg-[]'>
-      
-    </div>
+    <Link to={link}>
+      <button className='flex flex-row justify-center items-center rounded-xl'>
+        <IoIosClose />
+      </button>
+    </Link>
   )
 }
 
