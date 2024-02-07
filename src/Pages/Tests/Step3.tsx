@@ -5,6 +5,6 @@ export default function Step3() {
   // then frontcamera
   
   // @ts-ignore
-return < Camera chooseCamera="user" />
+return < Camera chooseCamera="environment" />
 
 }

@@ -1,9 +1,16 @@
 import Webcam from "react-webcam";
 import { useCallback, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+// @ts-ignore
+import { saveSelfie, saveRear } from "../../../Redux/Reducers/Images"
 
 function Camera(chooseCamera: string) {
    const webcamRef = useRef(null);
    const [imgSrc, setImgSrc] = useState(null);
+   // @ts-ignore
+   const savedPhotos = useSelector(state => state.savePhotos)
+   console.log(savedPhotos);
+   const dispatch = useDispatch()
 
    const videoConstraints = {
       width: { min: 480 },
@@ -15,6 +22,11 @@ function Camera(chooseCamera: string) {
       // @ts-ignore
       const imageSrc = webcamRef.current.getScreenshot();
       setImgSrc(imageSrc);
+
+      chooseCamera === "user" ?
+         dispatch(saveSelfie(imageSrc)) :
+         dispatch(saveRear(imageSrc))
+
    }, [webcamRef]);
 
    const retake = () => {
