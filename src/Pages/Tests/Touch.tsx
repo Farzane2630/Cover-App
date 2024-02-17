@@ -4,13 +4,13 @@ export default function Step1() {
   const rows = 14;
 
   const [rectangles, setRectangles] = useState<boolean[]>([]);
-  const [rectangleWidth, setRectangleWidth] = useState<number>((((window.innerWidth - 16) - (columns * 8)) / columns));
-  const [rectangleHeight, setRectangleHeight] = useState<number>((((window.innerHeight - 16) - (rows * 8)) / rows));
+  const [rectangleWidth, setRectangleWidth] = useState<number>((((window.innerWidth - 42) - (columns * 8)) / columns));
+  const [rectangleHeight, setRectangleHeight] = useState<number>((((window.innerHeight - 35) - (rows * 8)) / rows));
 
   const calculateRectangles = () => {
-    setRectangleWidth((((window.innerWidth - 16) - (columns * 8)) / columns));
+    setRectangleWidth((((window.innerWidth -42) - (columns * 8)) / columns));
 
-    setRectangleHeight((((window.innerHeight - 16) - (rows * 8)) / rows))
+    setRectangleHeight((((window.innerHeight - 35) - (rows * 8)) / rows))
 
     setRectangles(Array(rows * columns).fill(false));
   }
@@ -21,9 +21,6 @@ export default function Step1() {
       calculateRectangles()
     });
 
-    // return () => {
-    //   window.removeEventListener('resize', calculateRectangles);
-    // };
   }, [rectangleHeight, rectangleWidth]);
 
   const handleTouchStart = (index: number) => {

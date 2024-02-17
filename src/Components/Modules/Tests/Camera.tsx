@@ -3,13 +3,14 @@ import { useCallback, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // @ts-ignore
 import { saveSelfie, saveRear } from "../../../Redux/Reducers/Images"
+import { useNavigate } from "react-router-dom";
 
-function Camera(chooseCamera: string) {
+function Camera({ chooseCamera }: { chooseCamera: string }) {
+   const navigate = useNavigate()
    const webcamRef = useRef(null);
    const [imgSrc, setImgSrc] = useState(null);
    // @ts-ignore
    const savedPhotos = useSelector(state => state.savePhotos)
-   console.log(savedPhotos);
    const dispatch = useDispatch()
 
    const videoConstraints = {
@@ -24,14 +25,13 @@ function Camera(chooseCamera: string) {
       setImgSrc(imageSrc);
 
       chooseCamera === "user" ?
-         dispatch(saveSelfie(imageSrc)) :
-         dispatch(saveRear(imageSrc))
-
+         dispatch(saveSelfie(imageSrc)) && navigate("/guidance/step-4") :
+         dispatch(saveRear(imageSrc)) && navigate("/test-3-2")
    }, [webcamRef]);
 
-   const retake = () => {
-      setImgSrc(null);
-   };
+   // const retake = () => {
+   //    setImgSrc(null);
+   // };
 
    return (
       <div>
@@ -46,11 +46,7 @@ function Camera(chooseCamera: string) {
             />
          )}
          <div className="btn-container">
-            {imgSrc ? (
-               <button onClick={retake}>Retake photo</button>
-            ) : (
-               <button onClick={capture}>Capture photo</button>
-            )}
+            <button onClick={capture}>Capture photo</button>
          </div>
       </div>
    )

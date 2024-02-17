@@ -26,7 +26,7 @@ export default function StartBtn() {
     setButtonTranslateX(swipeDistance);
   
     setTimeout(() => {
-      navigate('/step-1');
+      navigate('/test-1');
     }, 900);
   };
 

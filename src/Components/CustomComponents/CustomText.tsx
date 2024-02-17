@@ -9,8 +9,9 @@ type PropsType = {
    margin?: string
    letterSpacing?: string
    className?: string
+   textAlign?: string 
 }
-export default function CustomText({ size, weight, customColor, value, lineHeight, margin, letterSpacing, className }: PropsType) {
+export default function CustomText({ size, weight, customColor, value, lineHeight, margin, letterSpacing, textAlign, className }: PropsType) {
    return (
       <p
          style={{
@@ -20,7 +21,9 @@ export default function CustomText({ size, weight, customColor, value, lineHeigh
             lineHeight: lineHeight,
             margin: margin ? margin : 0,
             fontFamily: "Yekan-Bach !important",
-            letterSpacing: letterSpacing
+            letterSpacing: letterSpacing,
+            // @ts-ignore
+            textAlign: textAlign
          }}
          className={className}
       >

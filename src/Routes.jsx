@@ -2,13 +2,14 @@
 import { Routes as RoutesWrapper, Route } from "react-router-dom"
 import Index from "./Pages/Index"
 import Step1 from "./Pages/guidance/Step1"
-import Test1 from "./Pages/Tests/Step1"
+import Touch from "./Pages/Tests/Touch"
 import Step2 from "./Pages/guidance/Step2"
-import Test2 from "./Pages/Tests/Step2"
+import Speaker from "./Pages/Tests/Speaker"
 import Step3 from "./Pages/guidance/Step3"
-import Test3 from "./Pages/Tests/Step3"
+import RearCamera from "./Pages/Tests/RearCamera"
+import FrontCamera from "./Pages/Tests/FrontCamera"
 import Step4 from "./Pages/guidance/Step4"
-import Test4 from "./Pages/Tests/Step4"
+import Mic from "./Pages/Tests/Mic"
 
 
 export default function Routes() {
@@ -16,13 +17,14 @@ export default function Routes() {
       <RoutesWrapper>
          <Route path="/" Component={Index} />
          <Route path="/guidance/step-1" Component={Step1} />
-         <Route path="/step-1" Component={Test1} />
+         <Route path="/test-1" Component={Touch} />
          <Route path="/guidance/step-2" Component={Step2} />
-         <Route path="/step-2" Component={Test2} />
+         <Route path="/test-2" Component={Speaker} />
          <Route path="/guidance/step-3" Component={Step3} />
-         <Route path="/step-3" Component={Test3} />
+         <Route path="/test-3-1" Component={RearCamera} />
+         <Route path="/test-3-2" Component={FrontCamera} />
          <Route path="/guidance/step-4" Component={Step4} />
-         <Route path="/step-4" Component={Test4} />
+         <Route path="/test-4" Component={Mic} />
       </RoutesWrapper>
    )
 }

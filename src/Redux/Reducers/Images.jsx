@@ -9,11 +9,11 @@ const slice = createSlice({
   reducers: {
     saveSelfie: (state, action) => {
       console.log("selfie:", action.payload);
-      return  void(state.selfie = action.payload)
+      return void (state.selfie = action.payload)
     },
     saveRear: (state, action) => {
       console.log("rear:", action.payload);
-      return  void(state.rear = action.payload)
+      return void (state.rear = action.payload)
     },
   }
 });
